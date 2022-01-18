@@ -1,0 +1,17 @@
+config:
+  credentials: []
+  project_repos: {}
+environment: {}
+sqa_criteria:
+  QC.Sty:
+    repos:
+      this_repo:
+        commands:
+        - hadolint --ignore SC2046 --ignore DL3002 --ignore DL3059 --ignore DL3047
+          --ignore SC2086 --ignore DL3027 --ignore DL3015 --ignore DL3008 worker-image/Dockerfile
+        - hadolint --ignore SC2046 --ignore DL3002 --ignore DL3059 --ignore DL3047
+          --ignore SC2086 --ignore DL3027 --ignore DL3015 --ignore DL3008 --ignore
+          DL3007 --ignore   DL3003 --ignore SC2016 --ignore DL4006 --ignore DL3020
+          --ignore SC2028 master-image/Dockerfile
+        container: scipion-hadolint
+timeout: 600
